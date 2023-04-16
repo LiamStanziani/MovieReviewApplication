@@ -1,0 +1,44 @@
+<div class="px-0">
+  <div class="card p-1" style="background-color: #cc1603">
+    <div class="card-header text-center">
+      <h1>Add a review</h1>
+    </div>
+    <div class="card-body">
+      <form #reviewForm="ngForm" (ngSubmit)="btnAdd_click()" novalidate>
+        <div class="mb-3">
+          <label for="txtMovieName" class="form-label">Review description: </label>
+          <textarea id="txtMovieName" name="txtMovieName" class="form-control"
+                    maxlength="300"
+                    style="background-color: #DCDCDC;border-color: #16161d;"
+                    [(ngModel)]="review.reviewText" #txtMovieName="ngModel"
+          ></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="txtReviewRating" class="form-label">Review rating (0-100): </label>
+          <input id="txtReviewRating" name="txtReviewRating" type="number" class="form-control"
+                 required min="0" max="100"
+                 style="background-color: #DCDCDC;border-color: #16161d;"
+                 [(ngModel)]="review.reviewRating" #txtReviewRating="ngModel"
+          >
+        </div>
+
+        <div *ngIf="txtReviewRating.invalid && (txtReviewRating.dirty || txtReviewRating.touched)">
+          <div *ngIf="txtReviewRating.errors?.['required']">
+            <p style="color: red;">Rating is required.</p>
+          </div>
+          <div *ngIf="txtReviewRating.errors?.['min']">
+            <p style="color: red;">Rating must be atleast 0.</p>
+          </div>
+          <div *ngIf="txtReviewRating.errors?.['max']">
+            <p style="color: red;">Rating must at most 100.</p>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary border-dark" [disabled]="!reviewForm.valid">Add</button>
+        <button type="button" class="btn btn-primary border-dark mx-3" routerLink="/list">Return to List</button>
+      </form>
+    </div>
+  </div>
+</div>
+

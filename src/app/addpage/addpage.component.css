@@ -1,0 +1,18 @@
+div{
+  background-color: #16161d;
+}
+h1{
+  background-color: #16161d;
+  color: #DCDCDC;
+}
+button {
+  background-color: #cc1603;
+}
+card{
+  width: 100%;
+}
+label{
+  color: #F5F5F5;
+  font-weight: bold;
+  font-style: italic;
+}

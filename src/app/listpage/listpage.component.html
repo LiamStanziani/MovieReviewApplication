@@ -1,0 +1,35 @@
+<div class="px-0">
+  <div class="card p-1" style="background-color: #cc1603;">
+    <div class="card-header text-center">
+      <h1>Movies list</h1>
+    </div>
+    <div class="card-body">
+      <div *ngIf="movies.length==0" style="color: #DCDCDC">
+        <h3>No records found</h3>
+      </div>
+
+
+      <ul class="list-group p-1" style="background-color: #cc1603;">
+        <li *ngFor="let item of movies; let index = index" class="list-group-item" style="border-bottom-color: #cc1603">
+          <img id="imgSnap" src="" width="30%" style="border-radius: 50%">
+
+          <h3 style="font-weight: bold;">{{item.name}}</h3><p>{{item.description}}</p>
+          <button type="button" class="btn btn-primary me-3 border-dark" id="displayBtn"
+                  (click)="btnDisplay_click(item)">Display</button>
+          <button type="button" class="btn btn-primary me-3 border-dark" id="modifyBtn"
+                  (click)="btnModify_click(item)">Modify</button>
+          <button type="button" class="btn btn-primary me-3 border-dark" id="addBtn"
+                  (click)="btnAddReview_click(item)">Add review</button>
+          <button type="button" class="btn btn-primary me-3 border-dark border-dark" id="deleteBtn"
+                  (click)="btnDelete_click(item, item.id)">Delete</button>
+          <span class="badge mt-4" style="float: right; background-color: #cc1603" >Genre: {{item.genre}}</span>
+
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</div>
+
+

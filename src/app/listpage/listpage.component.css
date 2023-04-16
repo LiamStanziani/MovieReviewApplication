@@ -1,0 +1,26 @@
+div{
+  background-color: #16161d;
+}
+h1, h3, p{
+  background-color: #16161d;
+  color: #DCDCDC;
+}
+button{
+  background-color: #cc1603;
+}
+li{
+  background-color: #16161d;
+  padding-bottom: 10px;
+}
+card{
+  width: 100%;
+}
+p{
+  font-weight: bold;
+  font-style: italic;
+}
+@media only screen and (max-width: 475px) {
+  #displayBtn, #modifyBtn, #addBtn, #deleteBtn{
+    margin-top: 3%;
+  }
+}

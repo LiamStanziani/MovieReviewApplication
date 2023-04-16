@@ -1,0 +1,83 @@
+<div class="px-0">
+  <div class="card p-1" style="background-color: #cc1603;">
+    <div class="card-header text-center">
+      <h1>Add a movie</h1>
+    </div>
+    <div class="card-body mx-0">
+      <form #movieForm="ngForm" (ngSubmit)="btnAdd_click()" novalidate>
+        <div class="mb-3">
+          <label for="txtMoviename" class="form-label">Movie name: </label>
+          <input id="txtMoviename" name="txtMovienameame" type="text" class="form-control"
+                 required maxlength="500"
+                 style="background-color: #DCDCDC;border-color: #16161d;"
+                 [(ngModel)]="movie.name" #txtMoviename="ngModel"
+          >
+        </div>
+
+        <div *ngIf="txtMoviename.invalid && (txtMoviename.dirty || txtMoviename.touched)">
+          <div *ngIf="txtMoviename.errors?.['required']">
+            <p style="color: red;">Name is required.</p>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="ddMovieGenre" class="form-label">Movie genre: </label>
+          <select id="ddMovieGenre" name="ddMovieGenre" class="form-control"
+                  required
+                  style="background-color: #DCDCDC;border-color: #16161d;"
+                  [(ngModel)]="movie.genre" #ddMovieGenre="ngModel"
+          >
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Horror">Horror</option>
+            <option value="Sci-fi">Sci-fi</option>
+            <option value="Drama">Drama</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div *ngIf="ddMovieGenre.invalid && (ddMovieGenre.dirty || ddMovieGenre.touched)">
+          <div *ngIf="ddMovieGenre.errors?.['required']">
+            <p style="color: red;">Genre is required.</p>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="txtMovieActors" class="form-label">Movie actors: </label>
+          <input id="txtMovieActors" name="txtMovieActors" type="text" class="form-control"
+                 required maxlength="500"
+                 style="background-color: #DCDCDC;border-color: #16161d;"
+                 [(ngModel)]="movie.actors" #txtMovieActors="ngModel"
+          >
+
+          <div *ngIf="txtMovieActors.invalid && (txtMovieActors.dirty || txtMovieActors.touched)">
+            <div *ngIf="txtMovieActors.errors?.['required']">
+              <p style="color: red;">Actors are required.</p>
+            </div>
+          </div>
+
+          <div class="mb-3 mt-3">
+            <label for="txtMovieDescription" class="form-label">Movie description: </label>
+            <textarea id="txtMovieDescription" name="txtMovieDescription" type="text" class="form-control"
+                      required minlength="40" maxlength="1000"
+                      style="background-color: #DCDCDC;border-color: #16161d;"
+                      [(ngModel)]="movie.description" #txtMovieDescription="ngModel"
+            > </textarea>
+          </div>
+
+          <div *ngIf="txtMovieDescription.invalid && (txtMovieDescription.dirty || txtMovieDescription.touched)">
+            <div *ngIf="txtMovieDescription.errors?.['required']">
+              <p style="color: red;">Description is required.</p>
+            </div>
+            <div *ngIf="txtMovieDescription.errors?.['minlength']">
+              <p style="color: red;">Description must be at least 40 characters long.</p>
+            </div>
+          </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary border-dark" [disabled]="!movieForm.valid">Add</button>
+      </form>
+    </div>
+  </div>
+</div>

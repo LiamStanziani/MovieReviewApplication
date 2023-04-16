@@ -1,0 +1,13 @@
+div{
+  background-color: #16161d;
+}
+h1, h2, h3, p{
+  background-color: #16161d;
+  color: #DCDCDC;
+}
+button{
+  background-color: #cc1603;
+}
+card{
+  width: 100%;
+}

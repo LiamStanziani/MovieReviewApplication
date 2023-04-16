@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.finalproject.moviesreviewapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>MoviesReviewApp</name>
+    <description>A movie review app for the final project of PROG2430</description>
+    <author email="Lstanziani0095@conestogac.onc.ca">
+        Liam Stanziani
+    </author>
+    <author email="Ngarrity7594@conestogac.on.ca">
+      Nathan Garrity
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <icon src="icon.png" />
+</widget>
